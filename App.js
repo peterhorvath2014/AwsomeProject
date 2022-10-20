@@ -1,6 +1,7 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, FlatList, Text, View, StatusBar } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
+import { Provider as PaperProvider } from "react-native-paper";
 
 const USER = [
   {
@@ -16,6 +17,7 @@ const USER = [
     name: 'Akos',
   }
 ]
+
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -40,8 +42,13 @@ const DATA = [
 ];
 
 const Item = ({ title, checked }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title} - {checked ? "Yes" : "No"}</Text>
+  <View>
+    <Text style={{
+      backgroundColor: '#eee',
+      padding: 10,
+      marginVertical: 8,
+      marginHorizontal: 16,
+    }}>{title} - {checked ? "Yes" : "No"}</Text>
   </View>
 );
 
@@ -51,7 +58,7 @@ export default function App() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <PaperProvider>
       <RNPickerSelect
         placeholder={({ label: "Válassz tanulót!", value: 0 })}
         onValueChange={(value) => console.log(value)}
@@ -62,25 +69,7 @@ export default function App() {
         renderItem={renderItem}
         keyExtractor={item => item.id}
       />
-    </SafeAreaView>
+    </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  item: {
-    backgroundColor: '#eee',
-    padding: 10,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 16,
-  },
-});
