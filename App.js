@@ -4,20 +4,8 @@ import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
 import { Provider as PaperProvider } from "react-native-paper";
 import RNPickerSelect from 'react-native-picker-select';
 
-const USER = [
-  {
-    id: 'gd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    name: 'Peter',
-  },
-  {
-    id: 'gd7acg4a-c1b1-46c2-aed5-3ad53abb28ba',
-    name: 'Henrik',
-  },
-  {
-    id: 'ece47cb3-1744-41ef-86ac-f0268b984bbf',
-    name: 'Akos',
-  }
-]
+const BASEURL = 'http://192.168.0.123'
+const USER = 'user'
 
 const DATA = [
   {
@@ -60,6 +48,7 @@ export default function App() {
 
   const [isLoading, setLoading] = React.useState(true);
   const [apodUrl, setApodUrl] = React.useState("");
+  const [users, setUsers] = React.useState([]);
 
   const getApodUrl = async () => {
     try {
@@ -77,13 +66,23 @@ export default function App() {
     getApodUrl();
   }, []);
 
+  const getUsers = async () => {
+    try {
+      const response = await fetch(new URL(USER, BASEURL));
+      const json = await response.json();
+      setUsers(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <PaperProvider>
       <AppBar title="Tanulós app" style={{ marginTop: 40 }} />
       <RNPickerSelect
         placeholder={({ label: "Válassz tanulót!", value: 0 })}
         onValueChange={(value) => console.log(value)}
-        items={USER.map(user => ({ label: user.name, value: user.id }))}
+        items={users.map(user => ({ label: user.name, value: user.id }))}
       />
       {isLoading ? <ActivityIndicator /> : <Image style={{ width: 250, height: 250, }} source={{ uri: apodUrl }} />}
       <FlatList
