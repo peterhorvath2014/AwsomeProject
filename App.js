@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, FlatList, Text, View, StatusBar } from 'react-native';
+import { SafeAreaView, StyleSheet, FlatList, Text, View, StatusBar, Image } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 
 const USER = [
@@ -56,6 +56,7 @@ export default function App() {
             onValueChange={(value) => console.log(value)}
             items={USER.map(user => ({label: user.name, value: user.id}))}
         />
+        <Image style={styles.space} source={{uri: 'https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg'}} />
         <FlatList
           data={DATA}
           renderItem={renderItem}
@@ -82,4 +83,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
   },
+  space: {
+    width: 250,
+    height: 250,
+  }
 });
