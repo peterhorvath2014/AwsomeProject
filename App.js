@@ -4,7 +4,7 @@ import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
 import { Provider as PaperProvider } from "react-native-paper";
 import RNPickerSelect from 'react-native-picker-select';
 
-const BASEURL = 'http://192.168.0.123'
+const BASEURL = 'http://192.168.0.124:5163'
 const USER = 'user'
 
 const DATA = [
@@ -65,21 +65,22 @@ export default function App() {
   React.useEffect(() => {
     getApodUrl();
   }, []);
-
-  React.useEffect(() => {
-    getUsers();
-  }, []);
-
+  
   const getUsers = async () => {
     try {
       const response = await fetch(new URL(USER, BASEURL));
       const json = await response.json();
       setUsers(json);
+      console.log(json);
     } catch (error) {
       console.error(error);
     }
   };
 
+  React.useEffect(() => {
+    getUsers();
+  }, []);
+  
   return (
     <PaperProvider>
       <AppBar title="Tanulós app" style={{ marginTop: 40 }} />
