@@ -1,8 +1,8 @@
-import React from 'react';
-import { FlatList, Text, View, Image, ActivityIndicator } from 'react-native';
-import RNPickerSelect from 'react-native-picker-select';
-import { Provider as PaperProvider } from "react-native-paper";
 import { AppBar } from "@react-native-material/core";
+import React from 'react';
+import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
+import { Provider as PaperProvider } from "react-native-paper";
+import RNPickerSelect from 'react-native-picker-select';
 
 const BASEURL = 'http://192.168.0.123'
 const USER = 'user'
