@@ -59,6 +59,9 @@ export default function App() {
 
   return (
     <PaperProvider>
+      <Text>Ezt csak iderakom addig, amig a style-ra nem jövök rá</Text>
+      <Text>Ezt csak iderakom addig, amig a style-ra nem jövök rá</Text>
+      <Text>Ezt csak iderakom addig, amig a style-ra nem jövök rá</Text>
       <RNPickerSelect
         placeholder={({ label: "Válassz tanulót!", value: 0 })}
         onValueChange={(value) => console.log(value)}
