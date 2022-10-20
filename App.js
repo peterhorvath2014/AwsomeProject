@@ -1,4 +1,5 @@
-import { AppBar } from "@react-native-material/core";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import { AppBar, HStack, IconButton, ListItem } from "@react-native-material/core";
 import React from 'react';
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
 import { Provider as PaperProvider } from "react-native-paper";
@@ -31,14 +32,12 @@ const DATA = [
 ];
 
 const Item = ({ title, checked }) => (
-  <View>
-    <Text style={{
-      backgroundColor: '#eee',
-      padding: 10,
-      marginVertical: 8,
-      marginHorizontal: 16,
-    }}>{title} - {checked ? "Yes" : "No"}</Text>
-  </View>
+  <ListItem
+    title={<HStack m={0} spacing={0}>
+      <View style={{width: 300}}><Text>{title}</Text></View>
+      <View style={{width: 100}}><IconButton icon={props => <Icon name="book" {...props} />} color={checked ? "primary" : "grey"} /></View>
+    </HStack>}>
+  </ListItem>
 );
 
 export default function App() {
