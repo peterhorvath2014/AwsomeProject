@@ -1,7 +1,7 @@
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { AppBar, HStack, IconButton, ListItem } from "@react-native-material/core";
+import { AppBar, IconButton, ListItem } from "@react-native-material/core";
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
+import { ActivityIndicator, FlatList, Image } from 'react-native';
 import { Provider as PaperProvider } from "react-native-paper";
 import RNPickerSelect from 'react-native-picker-select';
 
@@ -63,7 +63,7 @@ export default function App() {
   React.useEffect(() => {
     getApodUrl();
   }, []);
-  
+
   const getUsers = async () => {
     try {
       const response = await fetch(new URL(USER, BASEURL));
@@ -78,7 +78,7 @@ export default function App() {
   React.useEffect(() => {
     getUsers();
   }, []);
-  
+
   return (
     <PaperProvider>
       <AppBar title="Tanulós app" style={{ marginTop: 40 }} />
