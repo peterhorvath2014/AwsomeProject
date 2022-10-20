@@ -85,7 +85,7 @@ export default function App() {
         onValueChange={(value) => console.log(value)}
         items={USER.map(user => ({ label: user.name, value: user.id }))}
       />
-      {isLoading ? <ActivityIndicator /> : <Image style={styles.space} source={{ uri: apodUrl }} />}
+      {isLoading ? <ActivityIndicator /> : <Image style={{width: 250, height: 250,}} source={{ uri: apodUrl }} />}
       <FlatList
         data={DATA}
         renderItem={renderItem}
