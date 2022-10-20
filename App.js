@@ -1,7 +1,7 @@
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { AppBar, HStack, IconButton, ListItem } from "@react-native-material/core";
 import React from 'react';
-import { ActivityIndicator, FlatList, Image, Text } from 'react-native';
+import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
 import { Provider as PaperProvider } from "react-native-paper";
 import RNPickerSelect from 'react-native-picker-select';
 
@@ -33,8 +33,8 @@ const DATA = [
 
 const Item = ({ title, checked }) => (
   <ListItem
-    title={<HStack m={4} spacing={6}>
-      <Text style={{ padding: 10, width: 200 }}>{title}</Text>
+    title={<HStack m={0} spacing={0}>
+      <View><Text>{title}</Text></View>
       <IconButton icon={props => <Icon name="book" {...props} />} color={checked ? "primary" : "red"} />
     </HStack>}>
   </ListItem>
