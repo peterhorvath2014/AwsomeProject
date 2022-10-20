@@ -33,10 +33,8 @@ const DATA = [
 
 const Item = ({ title, checked }) => (
   <ListItem
-    title={<HStack m={0} spacing={0}>
-      <View style={{width: 300}}><Text>{title}</Text></View>
-      <View style={{width: 100}}><IconButton icon={props => <Icon name="book" {...props} />} color={checked ? "primary" : "grey"} /></View>
-    </HStack>}>
+    title={title}
+    trailing={<IconButton icon={props => <Icon name="book" {...props} />} color={checked ? "primary" : "grey"} />}>
   </ListItem>
 );
 
