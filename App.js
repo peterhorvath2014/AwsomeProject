@@ -5,6 +5,10 @@ const USER = [
   {
     id: 'gd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     name: 'Peter',
+  },
+  {
+    id: 'gd7acg4a-c1b1-46c2-aed5-3ad53abb28ba',
+    name: 'Henrik',
   }
 ]
 const DATA = [
