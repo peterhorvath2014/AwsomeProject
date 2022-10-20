@@ -1,6 +1,12 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, FlatList, Text, View, StatusBar } from 'react-native';
 
+const USER = [
+  {
+    id: 'gd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+    name: 'Peter',
+  }
+]
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
