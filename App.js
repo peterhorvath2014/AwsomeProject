@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, FlatList, Text, View, StatusBar } from 'react-native';
+import RNPickerSelect from 'react-native-picker-select';
 
 const USER = [
   {
@@ -51,6 +52,10 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
+      <RNPickerSelect
+            onValueChange={(value) => console.log(value)}
+            items={USER.map(user => ({label: user.name, value: user.id}))}
+        />
         <FlatList
           data={DATA}
           renderItem={renderItem}
