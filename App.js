@@ -1,8 +1,8 @@
-import React from 'react';
-import { FlatList, Text, View, Image, ActivityIndicator } from 'react-native';
-import RNPickerSelect from 'react-native-picker-select';
-import { Provider as PaperProvider } from "react-native-paper";
 import { AppBar } from "@react-native-material/core";
+import React from 'react';
+import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
+import { Provider as PaperProvider } from "react-native-paper";
+import RNPickerSelect from 'react-native-picker-select';
 
 const USER = [
   {
@@ -85,7 +85,7 @@ export default function App() {
         onValueChange={(value) => console.log(value)}
         items={USER.map(user => ({ label: user.name, value: user.id }))}
       />
-      {isLoading ? <ActivityIndicator /> : <Image style={{width: 250, height: 250,}} source={{ uri: apodUrl }} />}
+      {isLoading ? <ActivityIndicator /> : <Image style={{ width: 250, height: 250, }} source={{ uri: apodUrl }} />}
       <FlatList
         data={DATA}
         renderItem={renderItem}
