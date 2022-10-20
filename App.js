@@ -66,6 +66,10 @@ export default function App() {
     getApodUrl();
   }, []);
 
+  React.useEffect(() => {
+    getUsers();
+  }, []);
+
   const getUsers = async () => {
     try {
       const response = await fetch(new URL(USER, BASEURL));
