@@ -37,8 +37,6 @@ const Item = ({ title, checked }) => (
       <Text style={{ padding: 10, width: 200 }}>{title}</Text>
       <IconButton icon={props => <Icon name="book" {...props} />} color={checked ? "primary" : "red"} />
     </HStack>}>
-
-
   </ListItem>
 );
 
