@@ -5,6 +5,10 @@ const USER = [
   {
     id: 'gd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
     name: 'Peter',
+  },
+  {
+    id: 'ece47cb3-1744-41ef-86ac-f0268b984bbf',
+    name: 'Akos',
   }
 ]
 const DATA = [
@@ -22,6 +26,11 @@ const DATA = [
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Python',
     checked: false
+  },
+  {
+    id: 'a351ab3d-f52f-4ddd-b0eb-3b24477db6d0',
+    title: 'DevOps',
+    checked: true
   }
 ];
 
