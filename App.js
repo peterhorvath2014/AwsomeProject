@@ -34,6 +34,7 @@ const DATA = [
 const Item = ({ title, checked }) => (
   <ListItem
     title={title}
+    secondaryText="Ide írhatunk egy kis részletet is"
     trailing={<IconButton icon={props => <Icon name="book" {...props} />} color={checked ? "primary" : "grey"} />}>
   </ListItem>
 );
