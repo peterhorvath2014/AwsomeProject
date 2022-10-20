@@ -47,21 +47,22 @@ const Item = ({ title, checked }) => (
 
 export default function App() {
   const renderItem = ({ item }) => (
-    <Item title={item.title} checked={item.checked}/>
+    <Item title={item.title} checked={item.checked} />
   );
 
   return (
     <SafeAreaView style={styles.container}>
       <RNPickerSelect
-            onValueChange={(value) => console.log(value)}
-            items={USER.map(user => ({label: user.name, value: user.id}))}
-        />
-        <Image style={styles.space} source={{uri: 'https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg'}} />
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          keyExtractor={item => item.id}
-        />
+        placeholder={({ label: "Válassz tanulót!", value: 0 })}
+        onValueChange={(value) => console.log(value)}
+        items={USER.map(user => ({ label: user.name, value: user.id }))}
+      />
+      <Image style={styles.space} source={{uri: 'https://www.nasa.gov/sites/default/files/thumbnails/image/main_image_star-forming_region_carina_nircam_final-5mb.jpg'}} />
+      <FlatList
+        data={DATA}
+        renderItem={renderItem}
+        keyExtractor={item => item.id}
+      />
     </SafeAreaView>
   );
 }
