@@ -2,6 +2,7 @@ import React from 'react';
 import { FlatList, Text, View, Image } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import { Provider as PaperProvider } from "react-native-paper";
+import { AppBar } from "@react-native-material/core";
 
 const USER = [
   {
@@ -59,9 +60,7 @@ export default function App() {
 
   return (
     <PaperProvider>
-      <Text>Ezt csak iderakom addig, amig a style-ra nem jövök rá</Text>
-      <Text>Ezt csak iderakom addig, amig a style-ra nem jövök rá</Text>
-      <Text>Ezt csak iderakom addig, amig a style-ra nem jövök rá</Text>
+      <AppBar title="Tanulós app" style={{ marginTop: 40 }} />
       <RNPickerSelect
         placeholder={({ label: "Válassz tanulót!", value: 0 })}
         onValueChange={(value) => console.log(value)}
